@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char pt[50],k[50];
+	printf("Enter the key : ");
+	scanf("%s",k);
+	printf("Enter the plaintext : ");
+	scanf("%s",pt);
+	int x=strlen(k);
+	for(int i=0;i<strlen(pt);i++){
+		int a=int(pt[i])-96;
+		int b=int(k[i%x])-96;
+		int c=(a+b)%26;
+		char d= char(c+96);
+		printf("%c",d);
+	}
+}
